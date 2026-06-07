@@ -1,0 +1,60 @@
+[build-system]
+requires = ["setuptools>=45", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "smartclip-tui"
+version = "1.0.0"
+description = "AI-Powered Terminal Clipboard Manager with TUI"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [
+    {name = "SmartClip Team", email = "smartclip@example.com"}
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Topic :: Utilities",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Operating System :: OS Independent",
+]
+requires-python = ">=3.8"
+dependencies = [
+    "textual>=0.41.0",
+    "pyperclip>=1.8.0",
+    "click>=8.0.0",
+    "rich>=13.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-asyncio>=0.21.0",
+    "black>=23.0.0",
+    "flake8>=6.0.0",
+]
+
+[project.scripts]
+smartclip = "smartclip.cli:cli"
+sclip = "smartclip.cli:cli"
+
+[project.urls]
+Homepage = "https://github.com/yourusername/smartclip-tui"
+Repository = "https://github.com/yourusername/smartclip-tui"
+Issues = "https://github.com/yourusername/smartclip-tui/issues"
+
+[tool.black]
+line-length = 88
+target-version = ['py38']
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
